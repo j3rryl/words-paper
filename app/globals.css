@@ -23,6 +23,11 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: #CBC58E;
+  /* background: #CBC58E; */
   width: 100vw;
+
+  background-image: url("./assets/images/b1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }

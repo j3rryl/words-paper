@@ -20,6 +20,8 @@ const profile = ['Log Out', 'Account'];
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
+  const [activeTab, setActiveTab] = React.useState<string>("home");
+
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -31,6 +33,9 @@ function ResponsiveAppBar() {
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
+  const changePage = (tab: string) =>{
+    setActiveTab(tab);
+  }
 
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
@@ -64,15 +69,17 @@ function ResponsiveAppBar() {
           >
             Javier
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, alignItems:"center" }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, gap:3, alignItems:"center" }}>
           
             {pages.map((page) => (
               <Button
                 key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'black', display: 'block', textTransform:"capitalize" }}
+                onClick={()=>changePage(page)}
+                sx={{ my: 2, color: 'black', display: 'block', 
+                textTransform:"capitalize",
+                boxShadow:`${page===activeTab?"0px 2px 20px rgba(0, 0, 0, 0.5)":""}` 
+              }}
               >
-                
                 {page}
               </Button>
             ))}
@@ -80,12 +87,15 @@ function ResponsiveAppBar() {
           
 
 
-          <Box sx={{ flexGrow: 1, justifyContent:"end", display: { xs: 'none', md: 'flex' }, alignItems:"center" }}>
+          <Box sx={{ flexGrow: 1, justifyContent:"end", display: { xs: 'none', md: 'flex' }, gap:3, alignItems:"center" }}>
             {settings.map((page) => (
               <Button
                 key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'black', display: 'block', textTransform:"capitalize" }}
+                onClick={()=>changePage(page)}
+                sx={{ my: 2, color: 'black', display: 'block', 
+                textTransform:"capitalize",
+                boxShadow:`${page===activeTab?"0px 2px 20px rgba(0, 0, 0, 0.25)":""}`
+               }}
               >
                 {page}
               </Button>
@@ -114,7 +124,8 @@ function ResponsiveAppBar() {
               {profile.map((item) => (
                 <MenuItem key={item} onClick={handleCloseUserMenu}>
                   <Typography textAlign="center" sx={{
-                    color:"black"
+                    color:"black",
+                    fontSize:12
                   }}>{item}</Typography>
                 </MenuItem>
               ))}
