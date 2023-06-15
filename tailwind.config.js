@@ -8,6 +8,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily:{
+        'grafitti':['Calligraffitti', 'cursive'],
         'handlee':['Handlee', 'cursive'],
         'playball':['Playball', 'cursive'],
         'dancing':['Dancing Script', 'cursive']

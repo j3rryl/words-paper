@@ -1,11 +1,11 @@
-import Image from 'next/image'
 import ResponsiveAppBar from './components/ResponsiveAppBar'
+import Home from './home/page'
 
-export default function Home() {
+export default function index() {
   return (
     <>
     <ResponsiveAppBar />
-    <h4>Home</h4>
+    <Home/>
     </>
   )
 }

@@ -40,15 +40,13 @@ function ResponsiveAppBar() {
     <AppBar position="static" sx={{
       backgroundColor:"white",
       color:"black",
-      width:"95%",
+      width:"98%",
       margin:"5px auto",
       borderRadius:3
     }}>
       <Container>
         <Toolbar disableGutters>
-        
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, alignItems:"center" }}>
-          <Typography
+        <Typography
             variant="h6"
             noWrap
             component="a"
@@ -56,21 +54,25 @@ function ResponsiveAppBar() {
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
               fontWeight: 700,
+              fontSize:25,
               letterSpacing: '.3rem',
               color: 'inherit',
               textDecoration: 'none',
             }}
+            className='!font-grafitti'
           >
             Javier
           </Typography>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, alignItems:"center" }}>
+          
             {pages.map((page) => (
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'black', display: 'block' }}
+                sx={{ my: 2, color: 'black', display: 'block', textTransform:"capitalize" }}
               >
+                
                 {page}
               </Button>
             ))}
@@ -83,7 +85,7 @@ function ResponsiveAppBar() {
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'black', display: 'block' }}
+                sx={{ my: 2, color: 'black', display: 'block', textTransform:"capitalize" }}
               >
                 {page}
               </Button>
