@@ -13,6 +13,7 @@ const Item = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(1),
   textAlign: 'center',
   color: theme.palette.text.secondary,
+  borderRadius:20
 }));
 
 export default function Home() {
@@ -63,7 +64,10 @@ export default function Home() {
           }}>
             <Typography sx={{
                 textAlign:"center",
-                color:"black"
+                color:"black",
+                fontWeight:700,
+                fontSize:20,
+                letterSpacing:3
             }}>
             Latest
             </Typography>
