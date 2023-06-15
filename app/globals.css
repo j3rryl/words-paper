@@ -26,8 +26,7 @@ body {
   /* background: #CBC58E; */
   width: 100vw;
 
-  background-image: url("./assets/images/b1.jpg");
-  background-size: cover;
+  background: url("./assets/images/b1.jpg");
   background-position: center;
-  background-repeat: no-repeat;
+  background-size: cover;
 }
